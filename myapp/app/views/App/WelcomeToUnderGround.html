@@ -7,5 +7,11 @@
   <body>
     <h1>Welcome to underground</h1>
     <p>そっと耳元で囁く。</p>
+    {{if .flash.success}}
+    <p>{{.flash.success}}</p>
+    {{end}}
+    <form method="POST" action="/no-thank-you">
+      <button type="submit">No thank you</button>
+    </form>
   </body>
 </html>

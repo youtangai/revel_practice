@@ -13,3 +13,8 @@ func (c App) Index() revel.Result {
 func (c App) WelcomeToUnderGround() revel.Result {
 	return c.Render()
 }
+
+func (c App) NoThankYou() revel.Result {
+	c.Flash.Success("結構です")
+	return c.Redirect(App.WelcomeToUnderGround)
+}
