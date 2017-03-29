@@ -16,4 +16,14 @@ services:
             - 9000:9000
         depends_on:
             - db
-                    
+    pma:
+        image: phpmyadmin/phpmyadmin
+        environment:
+                - PMA_ARBITRARY=1
+                - PMA_HOST=db
+                - PMA_USER=revel
+                - PMA_PASSWORD=secret
+        links:
+                - db
+        ports:
+                - 8080:80
