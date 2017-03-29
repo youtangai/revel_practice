@@ -2,7 +2,6 @@ package controllers
 
 import (
     "github.com/revel/revel"
-    "myapp/app/models"
 )
 
 type Test struct {
