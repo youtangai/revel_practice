@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/revel/revel"
-	"myapp/app/models"
+	//"myapp/app/models"
 )
 
 func init() {
@@ -27,7 +27,6 @@ func init() {
 	// revel.OnAppStart(InitDB)
 	// revel.OnAppStart(FillCache)
 
-	revel.OnAppStart(models.InitDB) // init database
 }
 
 // TODO turn this into revel.HeaderFilter
