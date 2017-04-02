@@ -12,11 +12,28 @@ type UserController struct {
 func (c UserController) Index() revel.Result {
     db := connectDB()
 
-    var user models.User
     var allUsers []models.User
-    db.First(&user)
     db.Find(&allUsers)
+
     err := models.JsonError{0, ""}
-    result := arrangeJsonFormat("success!", allUsers, err)
+    result := convertJsonFormat("success!", allUsers, err)
+
     return c.RenderJSON(result)
+}
+
+func (c UserController) New() revel.Result {
+    return c.Render()
+}
+
+func (c UserController) Create(name string) revel.Result {
+    db := connectDB()
+
+    user := models.User{}
+    user.Name = name
+
+    db.NewRecord(user)
+
+    db.Create(&user)
+
+    return c.Redirect(UserController.Index)
 }

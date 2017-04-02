@@ -13,7 +13,7 @@ type BaseController struct {
     *revel.Controller
 }
 
-func arrangeJsonFormat(success string, data interface{}, err models.JsonError) models.JsonResponse {
+func convertJsonFormat(success string, data interface{}, err models.JsonError) models.JsonResponse {
     return models.JsonResponse{success, data, err}
 }
 
