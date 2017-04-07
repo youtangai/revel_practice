@@ -9,7 +9,8 @@ RUN apt-get update && \
 RUN go get github.com/revel/revel && \
     go get github.com/revel/cmd/revel && \
     go get github.com/jinzhu/gorm && \
-    go get github.com/go-sql-driver/mysql
+    go get github.com/go-sql-driver/mysql && \
+    go get github.com/ChimeraCoder/anaconda
 
 # change current dir
 RUN mkdir /go/src/myapp
