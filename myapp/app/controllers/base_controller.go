@@ -17,6 +17,12 @@ func convertJsonFormat(success string, data interface{}, err models.JsonError) m
     return models.JsonResponse{success, data, err}
 }
 
+/*
+func CreateTable() {
+  db := connectDB()
+  db.CreateTable(models.Model{})
+}*/
+
 func connectDB() *gorm.DB {
   db, err := gorm.Open("mysql", getConnectionString())
 

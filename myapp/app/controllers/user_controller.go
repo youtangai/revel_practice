@@ -37,3 +37,9 @@ func (c UserController) Create(name string) revel.Result {
 
     return c.Redirect(UserController.Index)
 }
+
+func (c UserController) CreateUserTable() revel.Result {
+  db := connectDB()
+  db.CreateTable(models.User{})
+  return c.RenderJSON("seccess")
+}
